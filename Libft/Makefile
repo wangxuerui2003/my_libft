@@ -30,6 +30,7 @@ SRC_FILES	= ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_isprint \
 				ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd \
 				ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast ft_lstadd_back ft_lstdelone ft_lstclear ft_lstiter ft_lstmap \
 				ft_printf ft_print_hex ft_putunsign ft_putvoidptr ft_putcharf ft_putnbrf ft_putstrf ft_get_flags ft_printf_utils ft_putnbrstrf \
+				ft_quick_sort \
 				get_next_line_bonus
 
 SRCS 		= 	$(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRC_FILES)))
