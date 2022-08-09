@@ -6,13 +6,13 @@
 /*   By: wxuerui <wxuerui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 19:06:03 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/07/14 14:12:47 by wxuerui          ###   ########.fr       */
+/*   Updated: 2022/08/10 06:15:43 by wxuerui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
-size_t	ft_strlen(char *str)
+static size_t	ft_strlen(char *str)
 {
 	size_t	i;
 

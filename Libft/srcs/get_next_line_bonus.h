@@ -6,7 +6,7 @@
 /*   By: wxuerui <wxuerui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 17:53:31 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/08/10 05:11:25 by wxuerui          ###   ########.fr       */
+/*   Updated: 2022/08/10 06:15:53 by wxuerui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 
 char	*get_next_line(int fd);
 char	*ft_strcombine(char *s1, char *s2);
-size_t	ft_strlen(char *str);
 char	*ft_strdup(char *s1);
 char	**ft_split_line(char *buff);
 int		is_line(char *line);
