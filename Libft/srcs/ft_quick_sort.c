@@ -6,7 +6,7 @@
 /*   By: wxuerui <wxuerui@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 19:57:36 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/08/09 20:01:33 by wxuerui          ###   ########.fr       */
+/*   Updated: 2022/08/09 21:55:50 by wxuerui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	partition(int *nums, int start, int end)
 	j = start - 1;
 	while (++j < end)
 	{
-		if (nums[j] >= pivot)
+		if (nums[j] <= pivot)
 		{
 			ft_swap(&nums[j], &nums[i]);
 			i++;
