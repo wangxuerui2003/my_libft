@@ -6,73 +6,18 @@
 /*   By: wxuerui <wxuerui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 17:53:11 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/08/09 21:44:38 by wxuerui          ###   ########.fr       */
+/*   Updated: 2022/07/26 16:19:14 by wxuerui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-static char	*ft_strcombine(char *s1, char *s2);
-static char	**ft_split_line(char *buff);
-static int	is_line(char *line);
-
-static char	*ft_strcombine(char *s1, char *s2)
-{
-	size_t	s1_len;
-	size_t	s2_len;
-	char	*res;
-	size_t	i;
-
-	if (!s2)
-		return (s1);
-	s1_len = ft_strlen((char *)s1);
-	s2_len = ft_strlen((char *)s2);
-	res = malloc((s1_len + s2_len + 1) * sizeof(char));
-	if (!res)
-		return (NULL);
-	i = -1;
-	while (++i < s1_len)
-		res[i] = s1[i];
-	i -= 1;
-	while (++i < s1_len + s2_len)
-		res[i] = s2[i - s1_len];
-	res[i] = 0;
-	if (s1)
-		free(s1);
-	return (res);
-}
-
-static char	**ft_split_line(char *buff)
-{
-	int		i;
-	int		j;
-	char	**res;
-
-	i = 0;
-	res = malloc(2 * sizeof(char *));
-	while (buff[i] && buff[i] != '\n')
-		i++;
-	if (!is_line(buff))
-		i--;
-	res[0] = malloc((i + 2) * sizeof(char));
-	j = -1;
-	while (++j < i + 1)
-		res[0][j] = buff[j];
-	res[0][j] = 0;
-	res[1] = NULL;
-	if ((ft_strlen(buff) > 1) && is_line(buff))
-	{
-		res[1] = malloc(ft_strlen(buff + i + 1) + 1);
-		j--;
-		while (buff[++j])
-			res[1][j - i - 1] = buff[j];
-		res[1][j - i - 1] = 0;
-	}
-	return (res);
-}
+#include "get_next_line_bonus.h"
+/*
+#include <fcntl.h>
+#include <stdio.h>
+*/
 
 /* return 1 if the string contains '\n' else 0 */
-static int	is_line(char *line)
+int	is_line(char *line)
 {
 	int	i;
 
@@ -91,7 +36,7 @@ static int	is_line(char *line)
 /* read BUFFER by BUFFER and return the final string that contains \n 
  * or encounter EOF.
  */
-static char	*read_line(int fd, char *buff)
+char	*read_line(int fd, char *buff)
 {
 	char	*temp;
 	int		ret;
@@ -145,3 +90,35 @@ char	*get_next_line(int fd)
 	free(splitted);
 	return (line);
 }
+/*
+int	main(void)
+{
+	char	*line;
+	int		i;
+	int		fd1;
+	int		fd2;
+	int		fd3;
+	fd1 = open("test_files/test1.txt", O_RDONLY);
+	fd2 = open("test_files/test2.txt", O_RDONLY);
+	fd3 = open("test_files/test4.txt", O_RDONLY);
+	i = 1;
+	while (i < 7)
+	{
+		line = get_next_line(fd1);
+		printf("line [%02d]: %s", i, line);
+		free(line);
+		line = get_next_line(fd2);
+		printf("line [%02d]: %s", i, line);
+		free(line);
+		line = get_next_line(fd3);
+		printf("line [%02d]: %s", i, line);
+		free(line);
+		i++;
+	}
+	close(fd1);
+	close(fd2);
+	close(fd3);
+	system("leaks get_next_line");
+	return (0);
+}
+*/
