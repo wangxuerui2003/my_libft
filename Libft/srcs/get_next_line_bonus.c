@@ -6,15 +6,49 @@
 /*   By: wxuerui <wxuerui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 17:53:11 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/07/26 16:19:14 by wxuerui          ###   ########.fr       */
+/*   Updated: 2022/09/10 17:09:07 by wxuerui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
-/*
-#include <fcntl.h>
-#include <stdio.h>
-*/
+
+static size_t	ft_strlen(char *str)
+{
+	size_t	i;
+
+	i = 0;
+	if (!str)
+		return (0);
+	while (str[i])
+		i++;
+	return (i);
+}
+
+static char	*ft_strdup(char *s1)
+{
+	char	*temp;
+	size_t	len;
+	size_t	i;
+
+	if (!s1)
+	{
+		temp = malloc(1);
+		temp[0] = 0;
+		return (temp);
+	}
+	len = ft_strlen((char *)s1);
+	temp = malloc((len + 1) * sizeof(char));
+	if (temp == NULL)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		temp[i] = s1[i];
+		i++;
+	}
+	temp[i] = 0;
+	return (temp);
+}
 
 /* return 1 if the string contains '\n' else 0 */
 int	is_line(char *line)
@@ -90,35 +124,3 @@ char	*get_next_line(int fd)
 	free(splitted);
 	return (line);
 }
-/*
-int	main(void)
-{
-	char	*line;
-	int		i;
-	int		fd1;
-	int		fd2;
-	int		fd3;
-	fd1 = open("test_files/test1.txt", O_RDONLY);
-	fd2 = open("test_files/test2.txt", O_RDONLY);
-	fd3 = open("test_files/test4.txt", O_RDONLY);
-	i = 1;
-	while (i < 7)
-	{
-		line = get_next_line(fd1);
-		printf("line [%02d]: %s", i, line);
-		free(line);
-		line = get_next_line(fd2);
-		printf("line [%02d]: %s", i, line);
-		free(line);
-		line = get_next_line(fd3);
-		printf("line [%02d]: %s", i, line);
-		free(line);
-		i++;
-	}
-	close(fd1);
-	close(fd2);
-	close(fd3);
-	system("leaks get_next_line");
-	return (0);
-}
-*/

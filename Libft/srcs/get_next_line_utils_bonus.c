@@ -6,7 +6,7 @@
 /*   By: wxuerui <wxuerui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 19:06:03 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/08/10 06:15:43 by wxuerui          ###   ########.fr       */
+/*   Updated: 2022/09/10 17:07:22 by wxuerui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,32 +48,6 @@ char	*ft_strcombine(char *s1, char *s2)
 	if (s1)
 		free(s1);
 	return (res);
-}
-
-char	*ft_strdup(char *s1)
-{
-	char	*temp;
-	size_t	len;
-	size_t	i;
-
-	if (!s1)
-	{
-		temp = malloc(1);
-		temp[0] = 0;
-		return (temp);
-	}
-	len = ft_strlen((char *)s1);
-	temp = malloc((len + 1) * sizeof(char));
-	if (temp == NULL)
-		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		temp[i] = s1[i];
-		i++;
-	}
-	temp[i] = 0;
-	return (temp);
 }
 
 char	**ft_split_line(char *buff)
