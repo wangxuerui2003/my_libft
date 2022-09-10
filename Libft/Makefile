@@ -42,18 +42,14 @@ OBJSF		=	.cache_exists
 
 all:	$(NAME)
 
-$(OBJS_DIR)%.o:		$(SRCS_DIR)%.c | $(OBJSF)
+$(OBJS_DIR)%.o:		$(SRCS_DIR)%.c
 					$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
-
-$(OBJSF):
-			mkdir -p $(OBJS_DIR)
 
 $(NAME):	$(OBJS)
 			$(AR) $(NAME) $(OBJS)
 
 clean:
 		rm -rf $(OBJS_DIR)
-		rm -rf $(OBJSF)
 
 fclean:	clean
 		rm -rf $(NAME)
