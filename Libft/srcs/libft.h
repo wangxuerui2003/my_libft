@@ -6,7 +6,7 @@
 /*   By: wxuerui <wxuerui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 11:41:09 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/08/10 05:11:42 by wxuerui          ###   ########.fr       */
+/*   Updated: 2022/09/10 16:56:28 by wxuerui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include <limits.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include <errno.h>
+# include <fcntl.h>
+# include <stdio.h>
 
 typedef struct s_list
 {
