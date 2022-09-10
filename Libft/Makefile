@@ -49,7 +49,7 @@ $(NAME):	$(OBJS)
 			$(AR) $(NAME) $(OBJS)
 
 clean:
-		rm -rf $(OBJS_DIR)
+		rm -f $(OBJS_DIR)*
 
 fclean:	clean
 		rm -rf $(NAME)
