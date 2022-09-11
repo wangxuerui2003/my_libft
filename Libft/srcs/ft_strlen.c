@@ -6,7 +6,7 @@
 /*   By: wxuerui <wxuerui@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 12:18:53 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/07/04 15:51:13 by wxuerui          ###   ########.fr       */
+/*   Updated: 2022/09/11 16:15:34 by wxuerui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlen(char *str)
 	size_t	i;
 
 	i = 0;
+	if (str == NULL)
+		return (i);
 	while (str[i])
 		i++;
 	return (i);
