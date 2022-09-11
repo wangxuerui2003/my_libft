@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: wxuerui <wxuerui@student.42kl.edu.my>      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/09/11 20:15:17 by wxuerui           #+#    #+#              #
+#    Updated: 2022/09/11 20:28:53 by wxuerui          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 
 #variables
 
@@ -20,6 +32,7 @@ BLUE = \033[0;94m
 MAGENTA = \033[0;95m
 CYAN = \033[0;96m
 WHITE = \033[0;97m
+RESET = \033[0m
 
 #sources
 
@@ -38,23 +51,26 @@ OBJS 		= 	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(SRC_FILES)))
 
 #######
 
-OBJSF		=	.cache_exists
-
-all:	
-		mkdir -p $(OBJS_DIR)
-		make $(NAME)
+all:
+		@mkdir -p $(OBJS_DIR)
+		@make $(NAME)
 
 $(OBJS_DIR)%.o:		$(SRCS_DIR)%.c
-					$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+					@$(CC) $(CFLAGS) -c $< -o $@
+					@echo ".\c"
 
 $(NAME):	$(OBJS)
-			$(AR) $(NAME) $(OBJS)
+			@echo "\n"
+			@$(AR) $(NAME) $(OBJS)
+			@echo "$(GREEN)$(NAME) was created$(RESET)"
 
 clean:
-		rm -rf $(OBJS_DIR)
+		@rm -rf $(OBJS_DIR)
+		@echo "$(BLUE)$(NAME): $(YELLOW)object files are cleaned$(RESET)"
 
 fclean:	clean
-		rm -rf $(NAME)
+		@rm -rf $(NAME)
+		@echo "$(BLUE)$(NAME): $(MAGENTA)$(NAME) was deleted$(RESET)"
 
 re:	fclean all
 
