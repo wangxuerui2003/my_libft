@@ -6,7 +6,7 @@
 /*   By: wxuerui <wxuerui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 11:41:09 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/09/10 16:56:28 by wxuerui          ###   ########.fr       */
+/*   Updated: 2022/09/13 16:50:06 by wxuerui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,10 @@ void		ft_putstr_fd(char *c, int fd);
 void		ft_putendl_fd(char *c, int fd);
 void		ft_putnbr_fd(int n, int fd);
 t_list		*ft_lstnew(void *content);
-void		ft_lstadd_front(t_list **lst, t_list *new);
+void		ft_lstadd_front(t_list **lst, t_list *new_node);
 int			ft_lstsize(t_list *lst);
 t_list		*ft_lstlast(t_list *lst);
-void		ft_lstadd_back(t_list **lst, t_list *new);
+void		ft_lstadd_back(t_list **lst, t_list *new_node);
 void		ft_lstdelone(t_list *lst, void (*del)(void *));
 void		ft_lstclear(t_list **lst, void (*del)(void *));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
