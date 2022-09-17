@@ -6,7 +6,7 @@
 /*   By: wxuerui <wxuerui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 11:41:09 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/09/13 16:50:06 by wxuerui          ###   ########.fr       */
+/*   Updated: 2022/09/17 16:47:08 by wxuerui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ int			ft_print_chars(char c, int rep);
 int			ft_putnbrstrf(char *str, t_flags *flags);
 char		*ft_uitoa_base(unsigned int num, char *base);
 void		ft_quick_sort(int *nums, int start, int end);
+int			ft_2darrlen(char **arr);
 char		*get_next_line(int fd);
 
 #endif
