@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_2darrlen.c                                      :+:      :+:    :+:   */
+/*   ft_free2darr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wxuerui <wxuerui@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/17 16:41:45 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/09/19 09:58:21 by wxuerui          ###   ########.fr       */
+/*   Created: 2022/09/19 09:57:09 by wxuerui           #+#    #+#             */
+/*   Updated: 2022/09/19 09:57:48 by wxuerui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_2darrlen(void **arr)
+void	ft_free2darr(void **arr)
 {
-	int	len;
+	int	i;
 
 	if (arr == NULL)
-		return (0);
-	len = 0;
-	while (arr[len] != NULL)
-		len++;
-	return (len);
+		return ;
+	i = -1;
+	while (arr[++i] != NULL)
+		free(arr[i]);
+	free(arr);
 }
