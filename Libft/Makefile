@@ -6,7 +6,7 @@
 #    By: wxuerui <wxuerui@student.42kl.edu.my>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/11 20:15:17 by wxuerui           #+#    #+#              #
-#    Updated: 2022/09/17 16:45:21 by wxuerui          ###   ########.fr        #
+#    Updated: 2022/09/19 10:07:49 by wxuerui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ SRC_FILES	= ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_isprint \
 				ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd \
 				ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast ft_lstadd_back ft_lstdelone ft_lstclear ft_lstiter ft_lstmap \
 				ft_printf ft_print_hex ft_putunsign ft_putvoidptr ft_putcharf ft_putnbrf ft_putstrf ft_get_flags ft_printf_utils ft_putnbrstrf \
-				ft_quick_sort ft_2darrlen \
+				ft_quick_sort ft_2darrlen ft_free2darr \
 				get_next_line_bonus get_next_line_utils_bonus \
 
 SRCS 		= 	$(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRC_FILES)))
